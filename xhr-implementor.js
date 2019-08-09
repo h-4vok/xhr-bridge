@@ -1,9 +1,10 @@
 import uuidv4 from 'uuid/v4';
+import { XhrBridgeConfig } from './xhr-bridge-config';
 
 /* eslint-disable no-console */
-/* This class has DEV environment specific code so we need console.log */
+/* This class has DEBUG specific code so we need console.log */
 
-export default class ApiImplementor {
+export class XhrImplementor {
   constructor(responseImplementor) {
     this.responseImplementor = responseImplementor;
   }
@@ -12,26 +13,39 @@ export default class ApiImplementor {
 
   logSeparator = () => console.log('###############################');
 
+  logEmptyLine = () => console.log('');
+
+  logPropertyValue = (req, key) => this.logValue(key, req[key]);
+
+  logCallbacksLength = (req, key) => this.logValue(`${key} callbacks #`, req.callbacks[key].length);
+
   execute(req) {
-    if (process.env.NODE_ENV !== 'development') return;
+    if (XhrBridgeConfig.showDebugLogs) return;
 
     req.identity = uuidv4();
 
+    this.logRequestInformation(req);
+  }
+
+  logRequestInformation(req) {
     this.logSeparator();
-    console.log(`Executing API request - ${req.identity}`);
+    console.log(`Executing XHR request - ${req.identity}`);
     this.logSeparator();
-    this.logValue('verb', req.verb);
-    this.logValue('headers', req.headers);
-    this.logValue('address', req.address);
-    this.logValue('body', req.body);
-    this.logValue('allowsDefaultSuccess', req.allowsDefaultSuccess);
-    this.logValue('allowsDefaultFailure', req.allowsDefaultFailure);
-    this.logValue('allowsDefaultError', req.allowsDefaultError);
-    this.logValue('success callbacks #', req.callbacks.success.length);
-    this.logValue('failure callbacks #', req.callbacks.failure.length);
-    this.logValue('error callbacks #', req.callbacks.error.length);
-    console.log('');
+
+    this.logPropertyValue('verb', req.verb);
+    this.logPropertyValue('headers', req.headers);
+    this.logPropertyValue('address', req.address);
+    this.logPropertyValue('body', req.body);
+    this.logPropertyValue('allowsDefaultSuccess', req.allowsDefaultSuccess);
+    this.logPropertyValue('allowsDefaultFailure', req.allowsDefaultFailure);
+    this.logPropertyValue('allowsDefaultError', req.allowsDefaultError);
+
+    this.logCallbacksLength(req, 'success');
+    this.logCallbacksLength(req, 'failure');
+    this.logCallbacksLength(req, 'error');
+
+    this.logEmptyLine();
     this.logSeparator();
-    console.log('');
+    this.logEmptyLine();
   }
 }

@@ -7,7 +7,8 @@
     "test": "test",
     "prettier": "pretty-quick --staged",
     "prettier:full": "pretty-quick --branch master --verbose",
-    "prettier:ci-check": "prettier --config ./.prettierrc.yml --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\""
+    "prettier:ci-check": "prettier --config ./.prettierrc.yml --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+    "lint": "eslint *.js --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,14 @@
   },
   "homepage": "https://github.com/h-4vok/xhr-bridge#readme",
   "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "prettier": "1.18.2",
     "pretty-quick": "^1.11.1"
+  },
+  "dependencies": {
+    "uuid": "^3.3.2"
   }
 }

@@ -6,10 +6,10 @@
   "scripts": {
     "test": "jest --config jest.config.json",
     "code-coverage": "jest --config jest.config.json --collect-coverage",
-    "prettier": "pretty-quick --staged --pattern *.js",
-    "prettier:full": "pretty-quick --branch master --verbose --pattern *.js",
-    "prettier:ci-check": "prettier --check \"*.js\"",
-    "lint": "eslint *.js --ignore-path .gitignore",
+    "prettier": "pretty-quick --staged --verbose --pattern src/**/*.js",
+    "prettier:full": "pretty-quick --branch master --verbose --pattern src/**/*.js",
+    "prettier:ci-check": "prettier --check \"src/**/*.js\"",
+    "lint": "eslint src/**/*.js --ignore-path .gitignore",
     "all-checks": "run-s test lint prettier prettier:ci-check"
   },
   "husky": {

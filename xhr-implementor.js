@@ -13,7 +13,6 @@ export default class ApiImplementor {
   logSeparator = () => console.log('###############################');
 
   execute(req) {
-    const shouldDebugXhrBridge = process || process.env;
     if (process.env.NODE_ENV !== 'development') return;
 
     req.identity = uuidv4();

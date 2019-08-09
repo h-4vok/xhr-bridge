@@ -1,13 +1,22 @@
 export class XhrRequest {
   implementor = null;
+
   verb = null;
+
   address = null;
+
   body = null;
+
   headers = {};
+
   queries = {};
+
   allowsDefaultSuccess = true;
+
   allowsDefaultFailure = true;
+
   allowsDefaultError = true;
+
   callbacks = {
     success: [],
     failure: [],

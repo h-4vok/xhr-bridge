@@ -1,0 +1,33 @@
+{
+  "name": "xhr-bridge",
+  "version": "1.0.0",
+  "description": "XHR Bridge Pattern that allows you to decouple your codebase from the actual XHR implementation of your choice. You will need an XHR-Bridge implementation of the XHR library of your choosing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "prettier": "pretty-quick --staged",
+    "prettier:full": "pretty-quick --branch master --verbose",
+    "prettier:ci-check": "prettier --config ./.prettierrc.yml --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h-4vok/xhr-bridge.git"
+  },
+  "keywords": [
+    "xhr",
+    "api",
+    "fetch",
+    "superagent",
+    "axios"
+  ],
+  "author": "Christian Guzmán",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h-4vok/xhr-bridge/issues"
+  },
+  "homepage": "https://github.com/h-4vok/xhr-bridge#readme",
+  "devDependencies": {
+    "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1"
+  }
+}

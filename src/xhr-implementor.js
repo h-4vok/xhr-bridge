@@ -7,20 +7,19 @@ import { XhrBridgeConfig } from './xhr-bridge-config';
 export class XhrImplementor {
   constructor(responseImplementor) {
     this.responseImplementor = responseImplementor;
+    this.log = console.log;
   }
 
-  logValue = (key, value) => console.log(`${key} - ${value}`);
+  logValue = (key, value) => this.log(`${key} - ${value}`);
 
-  logSeparator = () => console.log('###############################');
+  logSeparator = () => this.log('###############################');
 
-  logEmptyLine = () => console.log('');
-
-  logPropertyValue = (req, key) => this.logValue(key, req[key]);
+  logEmptyLine = () => this.log('');
 
   logCallbacksLength = (req, key) => this.logValue(`${key} callbacks #`, req.callbacks[key].length);
 
   execute(req) {
-    if (XhrBridgeConfig.showDebugLogs) return;
+    if (!XhrBridgeConfig.showDebugLogs) return;
 
     req.identity = uuidv4();
 
@@ -29,16 +28,16 @@ export class XhrImplementor {
 
   logRequestInformation(req) {
     this.logSeparator();
-    console.log(`Executing XHR request - ${req.identity}`);
+    this.log(`Executing XHR request - ${req.identity}`);
     this.logSeparator();
 
-    this.logPropertyValue('verb', req.verb);
-    this.logPropertyValue('headers', req.headers);
-    this.logPropertyValue('address', req.address);
-    this.logPropertyValue('body', req.body);
-    this.logPropertyValue('allowsDefaultSuccess', req.allowsDefaultSuccess);
-    this.logPropertyValue('allowsDefaultFailure', req.allowsDefaultFailure);
-    this.logPropertyValue('allowsDefaultError', req.allowsDefaultError);
+    this.logValue('verb', req.verb);
+    this.logValue('headers', req.headers);
+    this.logValue('address', req.address);
+    this.logValue('body', req.body);
+    this.logValue('allowsDefaultSuccess', req.allowsDefaultSuccess);
+    this.logValue('allowsDefaultFailure', req.allowsDefaultFailure);
+    this.logValue('allowsDefaultError', req.allowsDefaultError);
 
     this.logCallbacksLength(req, 'success');
     this.logCallbacksLength(req, 'failure');

@@ -20,5 +20,6 @@ parserOptions:
   }
 rules: {
   import/prefer-default-export: false,
-  prettier/prettier: error
+  prettier/prettier: error,
+  no-plusplus: 0
 }

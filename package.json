@@ -8,6 +8,7 @@
     "watch": "npx babel src --watch --out-dir dist",
     "test": "jest --config jest.config.json",
     "test:watch": "jest --config jest.config.json --watch",
+    "test:watchAll": "jest --config jest.config.json --watchAll",
     "code-coverage": "jest --config jest.config.json --collect-coverage",
     "prettier": "pretty-quick --staged --verbose --pattern src/**/*.js",
     "prettier:full": "pretty-quick --branch master --verbose --pattern src/**/*.js",

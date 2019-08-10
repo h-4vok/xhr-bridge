@@ -12,5 +12,6 @@
       "statements": 100
     }
   },
-  "verbose": false
+  "verbose": false,
+  "testMatch": ["**/test/**.test.js"]
 }

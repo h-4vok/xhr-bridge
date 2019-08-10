@@ -8,13 +8,13 @@ export class XhrRequestFactory {
     this.requestBuilder = requestBuilder || new XhrRequestBuilder(this.defaultRoot);
   }
 
-  get = address => this.requestBuilder.buildRequest(HttpVerbs.get, address, null, this.implementor);
+  get = route => this.requestBuilder.buildRequest(HttpVerbs.get, route, null, this.implementor);
 
-  post = (address, body) => this.requestBuilder.buildRequest(HttpVerbs.post, address, body, this.implementor);
+  post = (route, body) => this.requestBuilder.buildRequest(HttpVerbs.post, route, body, this.implementor);
 
-  put = (address, body) => this.requestBuilder.buildRequest(HttpVerbs.put, address, body, this.implementor);
+  put = (route, body) => this.requestBuilder.buildRequest(HttpVerbs.put, route, body, this.implementor);
 
-  del = address => this.requestBuilder.buildRequest(HttpVerbs.del, address, null, this.implementor);
+  del = route => this.requestBuilder.buildRequest(HttpVerbs.del, route, null, this.implementor);
 
-  patch = (address, body) => this.requestBuilder.buildRequest(HttpVerbs.patch, address, body, this.implementor);
+  patch = (route, body) => this.requestBuilder.buildRequest(HttpVerbs.patch, route, body, this.implementor);
 }

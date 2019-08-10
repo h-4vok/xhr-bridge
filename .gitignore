@@ -88,4 +88,4 @@ typings/
 .dynamodb/
 
 # Babel lib folder
-lib
+dist

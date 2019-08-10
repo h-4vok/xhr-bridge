@@ -1,8 +1,9 @@
 {
+  "name": "xhr-bridge",
   "collectCoverage": false,
   "collectCoverageFrom": ["*.js"],
   "coveragePathIgnorePatterns": [],
-  "coverageDirectory": "<rootDir>/coverage/",
+  "coverageDirectory": "<rootDir>/../coverage/",
   "coverageThreshold": {
     "global": {
       "branches": 100,

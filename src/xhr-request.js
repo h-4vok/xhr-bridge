@@ -3,7 +3,7 @@ export class XhrRequest {
 
   verb = null;
 
-  address = null;
+  route = null;
 
   body = null;
 
@@ -23,8 +23,8 @@ export class XhrRequest {
     error: []
   };
 
-  constructor(address, body = null) {
-    this.address = address;
+  constructor(route, body = null) {
+    this.route = route;
     this.body = body;
   }
 

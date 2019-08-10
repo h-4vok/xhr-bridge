@@ -6,9 +6,9 @@
   "scripts": {
     "build": "npx babel src --out-dir dist",
     "watch": "npx babel src --watch --out-dir dist",
-    "test": "jest --config src/jest.config.json",
-    "test:watch": "jest --config src/jest.config.json --watch",
-    "code-coverage": "jest --config src/jest.config.json --collect-coverage",
+    "test": "jest --config jest.config.json",
+    "test:watch": "jest --config jest.config.json --watch",
+    "code-coverage": "jest --config jest.config.json --collect-coverage",
     "prettier": "pretty-quick --staged --verbose --pattern src/**/*.js",
     "prettier:full": "pretty-quick --branch master --verbose --pattern src/**/*.js",
     "prettier:ci-check": "prettier --check \"src/**/*.js\"",

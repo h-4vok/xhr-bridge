@@ -1,6 +1,6 @@
-import { XhrRequestFactory } from './xhr-request-factory';
-import { XhrRequestBuilder } from './xhr-request-builder';
-import { HttpVerbs } from './http-verbs';
+import { XhrRequestFactory } from '../src/xhr-request-factory';
+import { XhrRequestBuilder } from '../src/xhr-request-builder';
+import { HttpVerbs } from '../src/http-verbs';
 
 const suiteName = 'XhrRequestFactory';
 
@@ -30,7 +30,7 @@ describe(suiteName, () => {
   test(`${suiteName} - constructor() without requestBuilder uses the default`, () => {
     subject = new XhrRequestFactory({}, '/rest/');
 
-    expect(subject.requestBuilder instanceof XhrRequestBuilder).toBeTruthy();
+    expect(subject.requestBuilder instanceof XhrRequestBuilder).toBe(true);
     expect(subject.requestBuilder.defaultRouteRoot).toBe('/rest/');
   });
 

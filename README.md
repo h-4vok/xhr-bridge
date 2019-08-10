@@ -28,11 +28,19 @@ npm install xhr-bridge
 npm run test
 ```
 
+## About xhr-bridge
+
+The idea is to decouple applications from specific XHR implementations. For example, if you use fetch, axios or superagent, you will be using these specific objects and calls directly from your code, effectively coupling your code to these specific libraries and implementations.
+
+Through xhr-bridge and you should be able to decouple your XHR implementation for the xhr-bridge abstract layer.
+
+This is better understood through an example. Currently xhr-bridge is completed but please wait until I upload xhr-superagent and also post a github with a xhr-superagent-example. I will also be developing xhr-fetch. Other libraries like axios and whatnot will follow after.
+
 ## Author
 
 👤 **Christian Guzmán**
 
-* Github: [@h-4vok](https://github.com/h-4vok)
+- Github: [@h-4vok](https://github.com/h-4vok)
 
 ## 🤝 Contributing
 
@@ -47,5 +55,6 @@ Give a ⭐️ if this project helped you!
 Copyright © 2019 [Christian Guzmán](https://github.com/h-4vok).<br />
 This project is [MIT](https://github.com/h-4vok/xhr-bridge/blob/master/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

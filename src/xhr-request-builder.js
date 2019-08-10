@@ -6,7 +6,7 @@ export class XhrRequestBuilder {
     this.defaultRouteRoot = defaultRouteRoot || XhrBridgeConfig.defaultRouteRoot;
   }
 
-  buildRequest = (verb, route, body = null, implementor) => {
+  buildRequest = (verb, route, body, implementor) => {
     const fullAddress = `${this.defaultRouteRoot}${route}`;
 
     const req = new XhrRequest(fullAddress, body);

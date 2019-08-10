@@ -2,7 +2,7 @@ import { HttpVerbs } from './http-verbs';
 import { XhrRequestBuilder } from './xhr-request-builder';
 
 export class XhrRequestFactory {
-  constructor(implementor, defaultRoot = null, requestBuilder = null) {
+  constructor(implementor, defaultRoot, requestBuilder = null) {
     this.implementor = implementor;
     this.defaultRoot = defaultRoot;
     this.requestBuilder = requestBuilder || new XhrRequestBuilder(this.defaultRoot);

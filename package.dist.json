@@ -1,0 +1,22 @@
+{
+  "name": "xhr-bridge",
+  "version": "1.0.3",
+  "description": "XHR Bridge Pattern that allows you to decouple your codebase from the actual XHR implementation of your choice. You will need an XHR-Bridge implementation of the XHR library of your choosing.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h-4vok/xhr-bridge.git"
+  },
+  "keywords": ["xhr", "api", "fetch", "superagent", "axios", "xmlhttprequest", "http", "httpclient"],
+  "author": "Christian Guzmán",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h-4vok/xhr-bridge/issues"
+  },
+  "homepage": "https://github.com/h-4vok/xhr-bridge#readme",
+  "dependencies": {
+    "@types/jest": "^24.0.17",
+    "uuid": "^3.3.2"
+  }
+}

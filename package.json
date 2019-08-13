@@ -1,15 +1,15 @@
 {
   "name": "xhr-bridge",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "XHR Bridge Pattern that allows you to decouple your codebase from the actual XHR implementation of your choice. You will need an XHR-Bridge implementation of the XHR library of your choosing.",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepublish": "npm run all-checks && npm run code-coverage && npm run build",
+    "bundle:prepare": "npm run all-checks && npm run code-coverage && npm run build",
+    "bundle:finish": "copy \"package.dist.json\" \"dist/package.json\" && copy \"LICENSE\" \"dist/LICENSE\" && copy \"README.md\" \"dist/README.md\"",
     "build": "npx babel src --out-dir dist",
-    "copy-package-json": "cp package.json dist",
     "watch": "npx babel src --watch --out-dir dist",
     "test": "jest --config jest.config.json",
     "test:watch": "jest --config jest.config.json --watch",

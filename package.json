@@ -1,6 +1,6 @@
 {
   "name": "xhr-bridge",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "XHR Bridge Pattern that allows you to decouple your codebase from the actual XHR implementation of your choice. You will need an XHR-Bridge implementation of the XHR library of your choosing.",
   "main": "dist/index.js",
   "files": [
@@ -48,6 +48,7 @@
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@types/jest": "^24.0.18",
     "babel-eslint": "^10.0.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
@@ -61,7 +62,6 @@
     "pretty-quick": "^1.11.1"
   },
   "dependencies": {
-    "@types/jest": "^24.0.17",
     "uuid": "^3.3.2"
   }
 }
